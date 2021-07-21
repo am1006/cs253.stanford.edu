@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1, viewport-fit=cover' />
+    <title>CS253 - Web Security</title>
+    <meta name='description' content='Principles of web security. The fundamentals and state-of-the-art in web security. Attacks and countermeasures. Topics include: the browser security model, web app vulnerabilities, injection, denial-of-service, TLS attacks, privacy, fingerprinting, same-origin policy, cross site scripting, authentication, JavaScript security, emerging threats, defense-in-depth, and techniques for writing secure code. Course projects include writing security exploits, defending insecure web apps, and implementing emerging web standards.' />
+    <meta name='theme-color' content='#B1040E' />
+    <meta name='color-scheme' value='light dark' />
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700&display=swap' rel='stylesheet' />
+    <link rel='stylesheet' href='normalize.css' />
+    <link rel='stylesheet' href='style.css' />
+  </head>
+  <body>
+    <div class='content'>
+      <a href='https://cs253.stanford.edu' class='logo'>
+        <img src='stanford.svg' alt='Stanford' />
+        <h1>CS 253 Web Security</h1>
+      </a>
+
+      <h2>Assignment 0 – Web Programming Adventure ✈️</h2>
+<ul>
+<li><strong>Points:</strong> 60</li>
+<li><strong>Due:</strong> Friday, October 4 at 5:00pm</li>
+</ul>
+<p>Welcome to the first assignment for <a href="https://cs253.stanford.edu" target="_blank" rel="nofollow noopener noreferrer">CS 253: Web Security</a>. ✨</p>
+<p>For this assignment, you're going to be completing several command-line workshops to ensure you're up-to-speed on the basics of HTML, JavaScript, and Node.js. The HTML and JavaScript material should be review from <a href="https://cs142.stanford.edu" target="_blank" rel="nofollow noopener noreferrer">CS 142</a>, while the Node.js material may be a more bit challenging.</p>
+<h2>Prepare</h2>
+<h3>Install Node.js and <code>npm</code></h3>
+<p>Install <a href="https://nodejs.org/en/" target="_blank" rel="nofollow noopener noreferrer">Node.js</a>, a popular JavaScript runtime. Choose Node.js 12.</p>
+<p>Node.js is a program that you install on your computer. With Node.js you can use the very popular programming language JavaScript to write software. JavaScript is usually used in a browser like Chrome or Firefox but with Node.js it is possible to do a lot more. Combined with other tools, Node.js allows you to write Desktop applications like Word or iTunes, Server applications like Apache, Network applications like Curl or even mobile applications for the iPhone or Android.</p>
+<p>Confirm that Node.js was installed. Open your terminal and run this command:</p>
+<pre><code class="hljs language-sh">node --version</code></pre>
+<p>Node.js comes bundled with <code>npm</code>, a package manager for installing Node.js packages.</p>
+<p>Confirm that it was installed:</p>
+<pre><code class="hljs language-sh">npm --version</code></pre>
+<p>If you have trouble getting Node.js installed, please come to office hours or <a href="https://piazza.com/stanford/fall2019/cs253" target="_blank" rel="nofollow noopener noreferrer">post in Piazza</a>.</p>
+<h3>Get the starter code</h3>
+<p>Run this command to clone the code with <code>git</code>:</p>
+<pre><code class="hljs language-sh">git <span class="hljs-built_in">clone</span> https://github.com/stanford-web-security/assign0.git</code></pre>
+<p>Enter the folder you just created:</p>
+<pre><code class="hljs language-sh"><span class="hljs-built_in">cd</span> assign0</code></pre>
+<p>Install the necessary local dependencies with <code>npm</code>:</p>
+<pre><code class="hljs language-sh">npm install</code></pre>
+<p>Install the workshops you will be completing globally with this command:</p>
+<pre><code class="hljs language-sh">npm install -g learnyouhtml javascripting learnyounode</code></pre>
+<p>The <code>-g</code> option installs these packages globally so that you can run them as a command in your terminal. After running this command, you'll have three new programs you can run from your terminal: <code>learnyouhtml</code>, <code>javascripting</code>, and <code>learnyounode</code>. We installed them this way so they would be easier to run since you're going to be running these commands a lot for this assignment.</p>
+<p>If the command fails with a permissions error, you likely do not have permission to modify the <code>/usr/local</code> system folder. The easiest fix is to rerun the above command with <code>sudo</code> prepended.</p>
+<p>To remove the global packages when you're finished with the assignment, just run:</p>
+<pre><code class="hljs language-sh">npm rm -g learnyouhtml javascripting learnyounode</code></pre>
+<p>(If you'd prefer to avoid global installation, you can download and run these commands on a one-off basis with e.g. <code>npx learnyouhtml</code> instead.)</p>
+<h3>Use StandardJS code style</h3>
+<p>All the code you write for CS 253 must pass the <a href="https://standardjs.com" target="_blank" rel="nofollow noopener noreferrer">StandardJS</a> linter. StandardJS enforces code quality, consistency, and catches several types of programmer errors.</p>
+<p>You can check your code by running:</p>
+<pre><code class="hljs language-sh">npm run lint</code></pre>
+<p>If no errors are printed by this command then no code style errors or programmer errors were detected.</p>
+<p>If you have errors, <strong>you can automatically fix them</strong> most of the time by running:</p>
+<pre><code class="hljs language-sh">npm run lint-fix</code></pre>
+<p>Now, let's start the assignment. I hope you're ready! 😁</p>
+<h2>Part 1 – Learn You The HTML For Much Win! (11 points, 1 per exercise)</h2>
+<p>Run the following command:</p>
+<pre><code class="hljs language-sh">learnyouhtml</code></pre>
+<p>You'll see the menu:</p>
+<p><img src="learnyouhtml.png"></p>
+<p>Navigate the menu with the up &#x26; down arrow keys. Choose a challenge by hitting enter.</p>
+<p>Whenever an exercise tells you to create a file, you should use the files we've already created for you in the <code>src/</code> folder. For example, the first file you need to edit is <code>src/learnyouhtml/index.html</code>.</p>
+<p><strong>IMPORTANT: Use a separate file for each exercise!</strong> We have provided you with a separate file to use for each exercise.</p>
+<p>You can use any text editor you like to, whether it's <code>vim</code> or <code>emacs</code> or even a visual editor like <a href="https://www.sublimetext.com/" target="_blank" rel="nofollow noopener noreferrer">Sublime Text</a> or <a href="https://code.visualstudio.com" target="_blank" rel="nofollow noopener noreferrer">VS Code</a>.</p>
+<p>Complete all the exercises. There are 11 in total.</p>
+<p>It's easiest if you switch into the <code>src/learnyouhtml</code> folder and do your work in there. Here's an example:</p>
+<pre><code class="hljs language-sh"><span class="hljs-built_in">cd</span> src/learnyouhtml
+learnyouhtml <span class="hljs-comment"># select an exercise to complete</span>
+vim index.html <span class="hljs-comment"># edit the file in your editor of choice</span>
+learnyouhtml verify index.html <span class="hljs-comment"># check that you did it correctly!</span></code></pre>
+<p>If you get stuck, the web is your friend! You can quickly search for a topic and quickly refresh your memory. A good trick is to search for a concept along with the abbreviation <code>"mdn"</code>, short for <a href="https://developer.mozilla.org/en-US/" target="_blank" rel="nofollow noopener noreferrer">Mozilla Developer Network</a> which is the best web resource for HTML and JavaScript APIs. So, for example if you want a refresher on how <code>&#x3C;script></code> tags work, you could search for <code>"script mdn"</code>.</p>
+<p>When you're finished with all the exercises, your <code>src/learnyouhtml</code> folder should have 11 complete <code>.html</code> files. Nice work!</p>
+<p>When you're ready, go on to the next part.</p>
+<h2>Part 2 – JavaScripting Adventure! (20 points, 1 per exercise)</h2>
+<p>Run the following command:</p>
+<pre><code class="hljs language-sh">javascripting</code></pre>
+<p>You'll see the menu:</p>
+<p><img src="javascripting.png"></p>
+<p>Complete all the exercises. There are 20 in total.</p>
+<p>It's easiest if you switch into the <code>src/javascripting</code> folder and do your work in there. Here's an example:</p>
+<pre><code class="hljs language-sh"><span class="hljs-built_in">cd</span> src/javascripting
+javascripting <span class="hljs-comment"># select an exercise to complete</span>
+vim introduction.js <span class="hljs-comment"># edit the first file in your editor of choice</span>
+javascripting verify introduction.js <span class="hljs-comment"># check that you did it correctly!</span></code></pre>
+<p>When you're finished with all the exercises, go on to the next part.</p>
+<h2>Part 3 – Learn You The Node.js For Much Win! (26 points, 2 per exercise)</h2>
+<p>Run the following command:</p>
+<pre><code class="hljs language-sh">learnyounode</code></pre>
+<p>You'll see the menu:</p>
+<p><img src="learnyounode.png"></p>
+<p>Complete all the exercises. There are 13 in total.</p>
+<p>Unlike Part 1 and Part 2, this part is likely to contain new material that you might not be familiar with. It is expected that you'll read the <a href="https://nodejs.org/api/index.html" target="_blank" rel="nofollow noopener noreferrer">Node.js documentation</a>, do web searches, and come to office hours if you're stuck. In the real world, programmers often have to learn topics quickly in a just-in-time manner to solve problems they encounter. This is good practice! If you get stuck, come to office hours or <a href="https://piazza.com/stanford/fall2019/cs253" target="_blank" rel="nofollow noopener noreferrer">post in Piazza</a>.</p>
+<p>It's easiest if you switch into the <code>src/learnyounode</code> folder and do your work in there. Here's an example:</p>
+<pre><code class="hljs language-sh"><span class="hljs-built_in">cd</span> src/learnyounode
+learnyounode <span class="hljs-comment"># select an exercise to complete</span>
+vim hello-world.js <span class="hljs-comment"># edit the first file in your editor of choice</span>
+learnyounode verify hello-world.js <span class="hljs-comment"># check that you did it correctly!</span></code></pre>
+<p>When you're finished with all the exercises, go on to the next part.</p>
+<h2>Part 4 – Survey (3 points)</h2>
+<p>Your feedback matters a lot! This is a brand new course, so please help us improve by answering the survey questions in <code>src/SURVEY.md</code>. As a reward, enjoy some easy points!</p>
+<h2>Submit</h2>
+<h3>Before you submit</h3>
+<p>Ensure that the sanity tests pass:</p>
+<pre><code class="hljs language-sh">npm <span class="hljs-built_in">test</span></code></pre>
+<p>This command just runs a basic sanity test that ensures your project passes <code>npm run lint</code>, has the right folder structure, and doesn't have any blank required files. If <code>npm test</code> doesn't report any errors that doesn't necessarily mean that you've solved every exercise perfectly!</p>
+<p><strong>🌟 PRO TIP: You can automatically fix most lint errors by running:</strong></p>
+<pre><code class="hljs language-sh">npm run lint-fix</code></pre>
+<h3>Gradescope</h3>
+<p>We use <a href="https://gradescope.com" target="_blank" rel="nofollow noopener noreferrer">Gradescope</a> for submissions. Enroll with the code <code>97BGZB</code>.</p>
+<h3>The moment of truth</h3>
+<p>When you're ready to submit your work, you'll upload the <code>src/</code> folder to Gradescope.</p>
+<p>You should submit early and often! There's no downside to repeatedly submitting your assignment.</p>
+<h2>Questions?</h2>
+<p>Come to office hours or <a href="https://piazza.com/stanford/fall2019/cs253" target="_blank" rel="nofollow noopener noreferrer">post in Piazza</a>.</p>
+
+    </div>
+  </body>
+</html>
